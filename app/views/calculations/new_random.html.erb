@@ -1,0 +1,12 @@
+<!-- app/views/math/new_random.html.erb -->
+<h1>Random Number Generator</h1>
+
+<%= form_with url: "/random/result", method: "get" do %>
+  <label for="min">Minimum</label>
+  <input type="text" name="min" id="min">
+
+  <label for="max">Maximum</label>
+  <input type="text" name="max" id="max">
+
+  <button type="submit">Pick random number</button>
+<% end %>

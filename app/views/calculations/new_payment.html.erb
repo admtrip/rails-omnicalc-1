@@ -1,0 +1,15 @@
+<!-- app/views/math/new_payment.html.erb -->
+<h1>Loan Payment Calculator</h1>
+
+<%= form_with url: "/payment/result", method: "get" do %>
+  <label for="apr">APR (Annual Percentage Rate)</label>
+  <input type="text" name="apr" id="apr">
+
+  <label for="years">Number of Years</label>
+  <input type="text" name="years" id="years">
+
+  <label for="principal">Principal Amount</label>
+  <input type="text" name="principal" id="principal">
+
+  <button type="submit">Calculate monthly payment</button>
+<% end %>

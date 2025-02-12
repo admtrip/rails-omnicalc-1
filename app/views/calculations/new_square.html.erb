@@ -1,0 +1,7 @@
+<h1>Square Calculator</h1>
+
+<%= form_with url: "/square/result", method: "get" do %>
+  <label for="number">Enter a number</label>
+  <input type="text" name="number" id="number">
+  <button type="submit">Calculate square</button>
+<% end %>
