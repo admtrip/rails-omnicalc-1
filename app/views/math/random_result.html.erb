@@ -1,4 +1,9 @@
-<!-- app/views/math/random_result.html.erb -->
 <h1>Random Number</h1>
-<p>A random number between <%= @min %> and <%= @max %> is <%= @random_number %></p>
+
+<% if @random_number.is_a?(String) %>
+  <p><%= @random_number %></p>
+<% else %>
+  <p>A random number between <%= @min %> and <%= @max %> is <strong><%= @random_number %></strong></p>
+<% end %>
+
 <a href="/random/new">Back</a>

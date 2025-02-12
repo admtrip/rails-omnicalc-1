@@ -24,11 +24,18 @@ class MathController < ApplicationController
   end
 
   def random_result
-    @min = params[:min].to_i
-    @max = params[:max].to_i
-    @random_number = rand(@min..@max)
+    @min = params[:min].to_f
+    @max = params[:max].to_f
+  
+    if @min >= @max
+      @random_number = "Error: Minimum must be less than Maximum."
+    else
+      @random_number = rand(@min..@max).round(2) # Ensures the output is formatted properly
+    end
+  
     render "math/random_result"
   end
+  
 
   def new_payment
     render "math/new_payment"
