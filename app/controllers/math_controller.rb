@@ -35,15 +35,19 @@ class MathController < ApplicationController
   end
 
   def payment_result
-    apr = params[:apr].to_f / 100
-    years = params[:years].to_i
-    principal = params[:principal].to_f
-
-    monthly_rate = apr / 12
-    months = years * 12
-
-    @monthly_payment = principal * (monthly_rate / (1 - (1 + monthly_rate) ** -months))
-
+    @apr = params[:apr].to_f
+    @years = params[:years].to_i
+    @principal = params[:principal].to_f
+  
+    monthly_rate = (@apr / 100) / 12
+    months = @years * 12
+  
+    @monthly_payment = @principal * (monthly_rate / (1 - (1 + monthly_rate) ** -months))
+  
+    # Round the APR to four decimal places and format as a percentage
+    @formatted_apr = format("%.4f", @apr)
+    
     render "math/payment_result"
-  end
+  end  
+  
 end

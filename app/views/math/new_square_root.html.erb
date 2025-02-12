@@ -1,8 +1,7 @@
-<!-- app/views/math/new_square_root.html.erb -->
 <h1>Square Root Calculator</h1>
 
 <%= form_with url: "/square_root/result", method: "get" do %>
-  <label for="user_number">Enter a number</label>
-  <input type="text" name="user_number" id="user_number">
+  <label for="number">Enter a number</label>
+  <input type="text" name="number" id="number">
   <button type="submit">Calculate square root</button>
 <% end %>
